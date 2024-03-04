@@ -1,0 +1,3 @@
+venv/
+libproject/libproject/__pycache__/
+libproject/libapp/__pycache__/
