@@ -1,3 +1,4 @@
 venv/
 libproject/libproject/__pycache__/
 libproject/libapp/__pycache__/
+libproject/libapp/migrations/
