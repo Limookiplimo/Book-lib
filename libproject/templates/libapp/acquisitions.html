@@ -1,0 +1,65 @@
+{% extends 'layouts/a.html' %}
+{% block content %}
+{% load static %}
+
+<div class="page-wrapper">
+    <div class="content">
+        <div class="page-header">
+            <div class="page-title">
+                <h4>Acquisitions</h4>
+                <h6>Manage Acquisitions</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">	
+                <div class="card-body">
+                    <a href="javascript: void(0);" class="btn btn-adds" data-bs-toggle="modal" data-bs-target="#create"><i class="fa fa-plus me-2"></i>Purchase</a>
+                </div>
+            </div>
+            <div class="col-md-4">	
+                <div class="card-body">
+                    <a href="javascript: void(0);" class="btn btn-adds" data-bs-toggle="modal" data-bs-target="#recieve"><i class="fa fa-plus me-2"></i>Receive</a>
+                </div>
+            </div>
+            <div class="col-md-4">	
+                <div class="card-body">
+                    <a href="javascript: void(0);" class="btn btn-adds" data-bs-toggle="modal" data-bs-target="#returns"><i class="fa fa-plus me-2"></i>Return</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="card-body">
+                <div class="table-top">
+                    <div class="search-set">
+                        <div class="search-input">
+                            <a class="btn btn-searchset"><img src="{% static 'img/icons/search-white.svg' %}" alt="img"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table  datanew">
+                        <thead>
+                            <tr>
+                                <th>Purchase Order</th>
+                                <th>Supplier</th>
+                                <th>Created Date</th>
+                                <th>Issue Date</th>
+                                <th>Receive Date</th>
+                                <th>PO Total</th>
+                                <th>Approved</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

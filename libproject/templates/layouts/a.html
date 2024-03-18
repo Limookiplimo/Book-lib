@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block layout %}
+
+
+<div id="global-loader" >
+    <div class="whirly-loader"> </div>
+</div>
+
+<!-- Main Wrapper -->
+<div class="main-wrapper">
+
+    <!-- Header -->
+    {% include 'includes/header.html' %}
+    <!-- Header -->
+
+    <!-- Sidebar -->
+    {% include 'includes/sidebar.html' %}
+    <!-- /Sidebar -->
+    
+    <!-- Page content -->
+    {% block content %}
+    {% endblock content %}
+    <!-- Page content -->
+
+</div>
+
+{% endblock layout %}

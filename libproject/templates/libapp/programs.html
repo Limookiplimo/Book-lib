@@ -1,0 +1,57 @@
+{% extends 'layouts/a.html' %}
+{% block content %}
+{% load static %}
+
+<div class="page-wrapper">
+    <div class="content">
+        <div class="page-header">
+            <div class="page-title">
+                <h4>Programs</h4>
+                <h6>Manage Programs</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">	
+                <div class="card-body">
+                    <a href="javascript: void(0);" class="btn btn-adds" data-bs-toggle="modal" data-bs-target="#register"><i class="fa fa-plus me-2"></i>Program</a>
+                </div>
+            </div>
+            <div class="col-md-6">	
+                <div class="card-body">
+                    <a href="javascript: void(0);" class="btn btn-adds" data-bs-toggle="modal" data-bs-target="#suspend"><i class="fa fa-plus me-2"></i>Suspend</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="card-body">
+                <div class="table-top">
+                    <div class="search-set">
+                        <div class="search-input">
+                            <a class="btn btn-searchset"><img src="{% static 'img/icons/search-white.svg' %}" alt="img"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table  datanew">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Description</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

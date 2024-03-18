@@ -1,0 +1,80 @@
+{% load static %}
+<div class="header">
+			
+    <!-- Logo -->
+     <div class="header-left active">
+        <a href="#" class="logo logo-normal">
+            <img src="{% static 'img/lib1.png' %}"  alt="">
+        </a>
+        <a href="#" class="logo logo-white">
+            <img src="{% static 'img/logo-white.png' %}"  alt="">
+        </a>
+        <a href="#" class="logo-small">
+            <img src="{% static 'img/kwanza-tukule.png' %}"  alt="">
+        </a>
+        <a id="toggle_btn" href="javascript:void(0);">
+            <i data-feather="chevrons-left" class="feather-16"></i>
+        </a>
+    </div>
+    <!-- /Logo -->
+    
+    <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+        <span class="bar-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+    </a>
+    
+    <!-- Header Menu -->
+    <ul class="nav user-menu">
+    
+        <!-- Search [[TODO - Manage this div with css]] -->
+        <li class="nav-item nav-searchinputs">
+            <div class="top-nav-search">
+            </div>
+        </li>
+        <!-- /Search -->
+    
+        <!-- Flag [[TODO - Manage this div with css]] -->
+        <li class="nav-item dropdown has-arrow flag-nav nav-item-box">
+            <div class="dropdown-menu dropdown-menu-right">
+                
+            </div>
+        </li>
+        <!-- /Flag -->
+        <li class="nav-item nav-item-box">
+            <a href="javascript:void(0);" id="btnFullscreen">
+                <i data-feather="maximize"></i>
+            </a>
+        </li>
+        <!-- Profile Management -->
+        <li class="nav-item dropdown has-arrow main-drop">
+            <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
+                <span class="user-info">
+                    <span class="user-letter">
+                        <img src="{% static 'img/profiles/userprof.png' %}" alt="" class="img-fluid">
+                    </span>
+                    <span class="user-detail">
+                        <span class="user-name">Super Admin</span>
+                    </span>
+                </span>
+            </a>
+            <div class="dropdown-menu menu-drop-user">
+                <div class="profilename">
+                    <a class="dropdown-item logout pb-0" href="#"><img src="{% static 'img/icons/log-out.svg' %}" class="me-2" alt="img">Logout</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <!-- /Header Menu -->
+    
+    <!-- Mobile Menu -->
+    <div class="dropdown mobile-user-menu">
+        <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Logout</a>
+        </div>
+    </div>
+    <!-- /Mobile Menu -->
+</div>

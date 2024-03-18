@@ -1,0 +1,34 @@
+{% load static %}
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="submenu-open">
+                    <ul>
+                        <li class="{% if request.resolver_match.url_name == 'library' %}active{% endif %}">
+                            <a href="{% url 'library' %}"><i data-feather="home"></i><span>Home</span></a>
+                        </li>
+                        <li class="{% if request.resolver_match.url_name == 'patrons' %}active{% endif %}">
+                            <a href="{% url 'patrons' %}"><i data-feather="users"></i><span>Patrons</span></a>
+                        </li>
+                        <li class="{% if request.resolver_match.url_name == 'programs' %}active{% endif %}">
+                            <a href="{% url 'programs' %}"><i data-feather="layers"></i><span>Programs</span></a>
+                        </li>
+                        <li class="{% if request.resolver_match.url_name == 'suppliers' %}active{% endif %}">
+                            <a href="{% url 'suppliers' %}"><i data-feather="layers"></i><span>Suppliers</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="{% if request.resolver_match.url_name in 'acquisitions' or request.resolver_match.url_name in 'checkouts' or request.resolver_match.url_name in '#' %}active subdrop{% endif %}">
+                                <i data-feather="grid"></i><span>Operations</span><span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="acquisitions" class="{% if request.resolver_match.url_name == 'acquisitions' %}active{% endif %}"><i data-feather="download"></i><span>Acqusitions</span></a></li>
+                                <li><a href="checkouts" class="{% if request.resolver_match.url_name == 'checkouts' %}active{% endif %}"><i data-feather="upload"></i><span>Lending</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>								
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
