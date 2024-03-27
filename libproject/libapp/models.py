@@ -3,13 +3,17 @@ from django.utils import timezone
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
+    call_num = models.CharField(max_length=200,null=True)
     author = models.CharField(max_length=100)
     isbn = models.CharField(max_length=20, unique=True)
     edition = models.CharField(max_length=20,null=True)
-    publication_date = models.DateField()
-    genre = models.CharField(max_length=50)
+    publication_date = models.DateField(null=True)
+    classification = models.CharField(max_length=100,null=True)
+    division = models.CharField(max_length=100,null=True)
+    subject = models.CharField(max_length=100,null=True)
+    topic = models.CharField(max_length=100,null=True)
+    subtopic = models.CharField(max_length=100,null=True)
     publisher = models.CharField(max_length=100)
-    description = models.TextField()
     
     def __str__(self):
         return self.title
@@ -117,3 +121,43 @@ class POItem(models.Model):
 
     def __str__(self):
         return f"{self.quantity} x {self.title} (${self.subtotal})"
+
+
+class DDCSClassification(models.Model):
+    classification = models.CharField(max_length=100)
+    classification_num = models.CharField(max_length=10)
+
+    class Meta:
+        db_table = "ddcs_classification"
+
+class DDCSDivision(models.Model):
+    classfication_num = models.CharField(max_length=10)
+    division = models.CharField(max_length=100)
+    division_num = models.CharField(max_length=10)
+    
+    class Meta:
+        db_table = "ddcs_division"
+
+class DDCSSubject(models.Model):
+    division_num = models.CharField(max_length=10)
+    subject = models.CharField(max_length=100)
+    subject_num = models.CharField(max_length=10)
+
+    class Meta:
+        db_table = "ddcs_subject"
+
+class DDCSTopic(models.Model):
+    subject_num = models.CharField(max_length=10)
+    topic = models.CharField(max_length=100)
+    topic_num = models.CharField(max_length=10)
+
+    class Meta:
+        db_table = "ddcs_topic"
+
+class DDCSSubtopic(models.Model):
+    topic_num = models.CharField(max_length=10)
+    subtopic = models.CharField(max_length=100)
+    subtopic_num = models.CharField(max_length=10)
+
+    class Meta:
+        db_table = "ddcs_subtopic"

@@ -1,12 +1,19 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from .models import BookCopy, Book,Patron,Program, PurchaseOrder, Checkout, Patron, Supplier
+from datetime import datetime
+
 
 # Create your views here.
 def books_library(request):
     books = BookCopy.objects.all()
     context = {'books': books}
     return render(request, 'libapp/home.html',context)
+
+def inventory(request):
+    books = BookCopy.objects.all()
+    context = {'books': books}
+    return render(request, 'libapp/inventory.html',context)
 
 def patrons(request):
     patrons = Patron.objects.all()
@@ -55,6 +62,11 @@ def createsupplier(request):
         }
         Supplier.objects.create(**data)
         return redirect(suppliers)
+
+def generate_po_number(request):
+    po_num = (f"PO{datetime.now().strftime('%Y%m%d%H%M%S')}").upper()
+    suburl = f"/create/purchaseorder/{po_num}"
+    return redirect(suburl)
 
 def create_purchase_order(request):
     if request.method == 'POST':
