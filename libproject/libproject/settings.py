@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'libproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'standby_db',
+        'NAME': 'library',
         'USER': 'db_user',
         'PASSWORD': 'user_password',
         'HOST': '127.0.0.1',

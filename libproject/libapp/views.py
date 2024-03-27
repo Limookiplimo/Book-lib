@@ -34,14 +34,19 @@ def suppliers(request):
     return render(request, 'libapp/suppliers.html', context)
 
 def createsupplier(request):
+    sup_count = Supplier.objects.count()
+    series_number = sup_count + 1
+    sup_code = (f"SUP{series_number:003d}").upper()
+
     if request.method == 'POST':
-        name = request.POST.get('name')
-        s_type = request.POST.get('s_type')
-        email = request.POST.get('email')
+        name = request.POST.get('name').upper()
+        s_type = request.POST.get('s_type').upper()
+        email = request.POST.get('email').lower()
         phone = request.POST.get('phone')
-        address = request.POST.get('address')
+        address = request.POST.get('address').upper()
 
         data = {
+            'sup_code': sup_code,
             'name': name,
             's_type': s_type,
             'email': email,
@@ -50,6 +55,10 @@ def createsupplier(request):
         }
         Supplier.objects.create(**data)
         return redirect(suppliers)
+
+def create_purchase_order(request):
+    if request.method == 'POST':
+        pass
 
 def acquire_books(request):
     if request.method == 'POST':

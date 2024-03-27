@@ -5,7 +5,7 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=100)
     isbn = models.CharField(max_length=20, unique=True)
-    edition = models.CharField(max_length=20)
+    edition = models.CharField(max_length=20,null=True)
     publication_date = models.DateField()
     genre = models.CharField(max_length=50)
     publisher = models.CharField(max_length=100)
@@ -34,8 +34,8 @@ class BookCopy(models.Model):
 class Patron(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    id_num = models.CharField(max_length=50)
-    gender = models.CharField(max_length=50)
+    id_num = models.CharField(max_length=50,null=True)
+    gender = models.CharField(max_length=50,null=True)
     email = models.EmailField(unique=True)
     phone_number = models.CharField(max_length=20)
     address = models.CharField(max_length=200)
@@ -72,6 +72,7 @@ class Program(models.Model):
         db_table = "program"
 
 class Supplier(models.Model):
+    sup_code = models.CharField(max_length=20)
     name = models.CharField(max_length=100)
     s_type = models.CharField(max_length=100)
     email = models.EmailField()
